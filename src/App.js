@@ -1,4 +1,6 @@
+
 import React, { Component } from 'react';
+import { Link,NavLink,Redirect} from 'react-router-dom';
 import './App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from  'materialize-css/dist/js/materialize.min.js';
@@ -14,7 +16,7 @@ class App extends Component {
       {/* NAV */}
       <nav className="nav-extended">
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo">Logo</a>
+          <a href="/" className="brand-logo">Logo</a>
           <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
@@ -25,7 +27,8 @@ class App extends Component {
         <div className="nav-content">
           <ul className="tabs tabs-transparent">
             <li className="tab"><a href="#test1">매장소개</a></li>
-            <li className="tab"><a href="#test2">고기구경</a></li>
+            {/* <li className="tab"><a href="#test2">고기구경</a></li> */}
+            <li className="tab"><NavLink to="/gogi">고기구경</NavLink></li>
             <li className="tab"><a href="#test3">매장리뷰</a></li>
             <li className="tab"><a href="#test4">오시는길</a></li>
           </ul>
