@@ -12,7 +12,7 @@ class Navlist extends Component{
         return (
             <div>
                 <nav className="nav-extended">
-                    <div className="nav-wrapper">
+                    <div className="nav-wrapper container">
                     <NavLink to="/" className="brand-logo">Logo</NavLink>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -21,7 +21,7 @@ class Navlist extends Component{
                         <li><a href="collapsible.html">JavaScript</a></li>
                     </ul>
                     </div>
-                    <div className="nav-content">
+                    <div className="nav-content container">
                     <ul className="tabs tabs-transparent">
                         <li className="tab"><a href="#test1">매장소개</a></li>
                         {/* <li className="tab"><a href="#test2">고기구경</a></li> */}

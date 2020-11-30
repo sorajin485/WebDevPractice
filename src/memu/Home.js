@@ -1,28 +1,30 @@
 
 import React, { Component } from 'react';
-
+import background1 from './background1.jpg';
+import background2 from './test.jpg';
+import M from  'materialize-css/dist/js/materialize.min.js';
 class Home extends Component{
+    componentDidMount() {
+        let parallax = document.querySelectorAll('.parallax');
+        M.Parallax.init(parallax, {});
+      }
     render(){
         return (
             <div>
-                <div id="index-banner" className="parallax-container">
-                    <div className="section no-pad-bot">
-                    <div className="container">
-                        <br></br>
-                        <h1 className="header center teal-text text-lighten-2">Parallax Template</h1>
-                        <div className="row center">
-                        <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <div id="index-banner" class="parallax-container">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+                        <div class="row center">
+                            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
                         </div>
-                        <div className="row center">
-                        <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                        <div class="row center">
+                            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
                         </div>
-                        <br></br>
-
                     </div>
-                    </div>
-                    <div className="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"/></div>
                 </div>
-
+                <div class="parallax"><img src={background2} alt="Unsplashed background img 1"/></div>
+            </div>
                 <div className="container">
                     <div className="section">
                     {/*   Icon Section   */}
