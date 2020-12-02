@@ -23,11 +23,11 @@ class Navlist extends Component{
                     </div>
                     <div className="nav-content container">
                     <ul className="tabs tabs-transparent">
-                        <li className="tab"><a href="#test1">매장소개</a></li>
+                        <li className="tab"><NavLink to="/intro">매장소개</NavLink></li>
                         {/* <li className="tab"><a href="#test2">고기구경</a></li> */}
                         <li className="tab"><NavLink to="/gogi">고기구경</NavLink></li>
-                        <li className="tab"><a href="#test3">매장리뷰</a></li>
-                        <li className="tab"><a href="#test4">오시는길</a></li>
+                        <li className="tab"><NavLink to="/review">매장리뷰</NavLink></li>
+                        <li className="tab"><NavLink to="/map">오시는길</NavLink></li>
                     </ul>
                     </div>
                 </nav>
