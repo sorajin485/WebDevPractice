@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 
 
-import {Navlist,Footer} from './sections';
+import {Navlist,Foot} from './sections';
 
 import { Home, Intro, Gogi, Review, Map } from './memu';
 
@@ -19,7 +19,7 @@ ReactDOM.render(
     <Route path="/Review" component = {Review}/>
     <Route path="/Map" component = {Map}/>
     <Route path="/gogi" component = {Gogi}/>
-    <Route path ="/" component = {Footer}/>
+    <Route path ="/" component = {Foot}/>
   </Router>, 
   document.getElementById('root')
 );

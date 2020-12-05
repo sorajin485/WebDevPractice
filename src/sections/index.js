@@ -1,6 +1,6 @@
 
 
 import Navlist from './Navlist';
-import Footer from './Footer';
+import Foot from './Foot';
 
-export {Navlist,Footer};
+export {Navlist,Foot};
