@@ -16,9 +16,8 @@ class Navlist extends Component{
                     <NavLink to="/" className="brand-logo">Logo</NavLink>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
+                        <li><a href="#">내정보</a></li>
+                        <li><a href="#">로그인/로그아웃</a></li>
                     </ul>
                     </div>
                     <div className="nav-content container">
@@ -32,9 +31,8 @@ class Navlist extends Component{
                     </div>
                 </nav>
                 <ul className="sidenav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="#">내정보</a></li>
+                    <li><a href="#">로그인/로그아웃</a></li>
                 </ul>
             </div>
         );
