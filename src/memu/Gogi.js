@@ -90,9 +90,43 @@ class Gogi extends Component {
                             <Card
                               closeIcon={<Icon>close</Icon>}
                               header={<CardTitle image={pig2} reveal waves="light"/>}
+                              reveal={<p>기준가 15,300원/600g <br/>두께 선택가능</p>}
+                              revealIcon={<Icon>more_vert</Icon>}
+                              title="돼지 수육용"
+                            >
+                            </Card>
+                            </div>
+
+                            <div className="col s12 m4">
+                            <Card
+                              closeIcon={<Icon>close</Icon>}
+                              header={<CardTitle image="https://materializecss.com/images/sample-1.jpg" reveal waves="light"/>}
                               reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}
                               revealIcon={<Icon>more_vert</Icon>}
                               title="Card Title"
+                            >
+                            </Card>
+                            </div>
+                        </div>
+                        <div className="row ">
+                            <div className="col s12 m4">
+                            <Card
+                              closeIcon={<Icon>close</Icon>}
+                              header={<CardTitle image={pig1} reveal waves="light"/>}
+                              reveal={<p>기준가 15,300원/600g <br/>두께 선택가능</p>}
+                              revealIcon={<Icon>more_vert</Icon>}
+                              title="돼지 삼겹살 구이용"
+                            >
+                            </Card>
+                            </div>
+
+                            <div className="col s12 m4">
+                            <Card
+                              closeIcon={<Icon>close</Icon>}
+                              header={<CardTitle image={pig2} reveal waves="light"/>}
+                              reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}
+                              revealIcon={<Icon>more_vert</Icon>}
+                              title="돼지 수육용"
                             >
                             </Card>
                             </div>

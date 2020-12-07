@@ -4,10 +4,6 @@ import M from  'materialize-css/dist/js/materialize.min.js';
 import background2 from './test.jpg';
 import {Parallax } from 'react-materialize';
 class Intro extends Component{
-    componentDidMount() {
-        let parallax = document.querySelectorAll('.parallax');
-        M.Parallax.init(parallax, {});
-      }
     render(){
         return(
             <div>
@@ -18,11 +14,10 @@ class Intro extends Component{
                     }}>
                     <div class="section no-pad-bot">
                         <div class="container">
-                            <h1 class="header center teal-text text-lighten-2">매장 소개</h1>
-                        <div class="row center">
-                            <h5 class="header col s12 light">방문을 환영합니다</h5>
-                        </div>
-                        
+                                <h1 class="header center teal-text text-lighten-2">매장 소개</h1>
+                            <div class="row center">
+                                <h5 class="header col s12 light">방문을 환영합니다</h5>
+                            </div>
                         </div>
                     </div>
                 </Parallax>

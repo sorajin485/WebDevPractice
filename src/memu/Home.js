@@ -3,28 +3,30 @@ import React, { Component } from 'react';
 import background1 from './background1.jpg';
 import background2 from './test.jpg';
 import M from  'materialize-css/dist/js/materialize.min.js';
+import {NavLink} from 'react-router-dom';
+import {Parallax } from 'react-materialize';
 class Home extends Component{
-    componentDidMount() {
-        let parallax = document.querySelectorAll('.parallax');
-        M.Parallax.init(parallax, {});
-      }
     render(){
         return (
             <div>
-                <div id="index-banner" class="parallax-container">
+                <Parallax
+                    image={<img alt="" src="http://materializecss.com/images/parallax1.jpg"/>}
+                    options={{
+                    responsiveThreshold: 0
+                    }}>
                     <div class="section no-pad-bot">
                         <div class="container">
-                            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+                            <h1 class="header center teal-text text-lighten-2">방문을 환영합니다.</h1>
                         <div class="row center">
-                            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                            <h4 class="header col s12 teal-text">고기를 구경해보세요</h4>
                         </div>
                         <div class="row center">
-                            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                            <a href="/gogi" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">구경가기</a>
+                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="parallax"><img src={background2} alt="Unsplashed background img 1"/></div>
-            </div>
+                </Parallax>
+                
                 <div className="container">
                     <div className="section">
                     {/*   Icon Section   */}
