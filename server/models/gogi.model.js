@@ -1,8 +1,6 @@
 const sql = require("./config/db.js");
 const axios = require('axios');
 
-
-
 Mslm.create = (newMslm, result) => {
   console.log("req : " + newMslm);
   
