@@ -4,4 +4,5 @@ import Intro from './Intro';
 import Gogi from './Gogi';
 import Review from './Review';
 import Map from './Map';
-export { Home, Intro, Gogi, Review, Map };
+import Test from './Test';
+export { Home, Intro, Gogi, Review, Map, Test };
