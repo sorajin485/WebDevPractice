@@ -3,7 +3,7 @@ var Users = require("../models/Users");
 var usersController = {};
 
 usersController.signup = (req,res) => {
-    console.log("usersController : req: ",req);
+    console.log("usersController : req.body: ",req.body);
     var users = new Users(req.body);
     users.save( (err) => {
         if (err) {
