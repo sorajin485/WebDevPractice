@@ -3,6 +3,9 @@ var express = require('express');
 var router = express.Router();
 var users = require('../controllers/UsersController.js');
 
+router.post('/signup', users.signup);
+//router.post('/signup', users.signin);
+
 
 router.get('/', users.list);
 router.get('/show/:id', users.show);

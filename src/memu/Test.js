@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { post } from 'axios';
+import {TextInput} from 'react-materialize';
 class Test extends Component{
     constructor(props){
         super(props);
@@ -78,7 +79,22 @@ class Test extends Component{
             <div className="container">
                 <form onSubmit={this.handleFormSubmit}>
                     <h1>고기 추가</h1>
-                    고기 이미지: <input type="file" name="file" file ={this.state.file} value ={this.state.fileName} onChange={this.handleFileChange}/><br/>
+                    {/* <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input type="file" name="file" file ={this.state.file} value ={this.state.fileName} onChange={this.handleFileChange}/>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text"/>
+                        </div>
+                    </div> */}
+                    <TextInput
+                        id="TextInput-4"
+                        label="File"
+                        type="file"
+                        name="file" file ={this.state.file} value ={this.state.fileName} onChange={this.handleFileChange}
+                    />
+                    {/*고기 이미지: <input type="file" name="file" file ={this.state.file} value ={this.state.fileName} onChange={this.handleFileChange}/><br/>*/}
                     고기 이름: <input type="text" name="title" value ={this.state.title} onChange={this.handleValueChange}/><br/>
                     고기 설명: <input type="text" name="explan" value ={this.state.explan} onChange={this.handleValueChange}/><br/>
                     

@@ -7,7 +7,7 @@ class Gogi extends Component {
     render(){
         return(
             <div>
-<Slider
+  <Slider
       fullscreen={false}
       options={{
         duration: 500,

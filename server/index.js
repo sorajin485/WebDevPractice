@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const employeesRouter = require('./routes/employees.js'); 
 const gogiRouter = require('./routes/gogi.js'); 
 const usersRouter = require('./routes/users.js');
-const authenticationRouter = require('./routes/authentication.js');
+//const authenticationRouter = require('./routes/authentication.js');
 var fs = require('fs');
 var path = require('path');
 
@@ -50,7 +50,7 @@ app.post('/api/test',upload.single('image'), (req,res)=>{
 app.use('/api/employees', employeesRouter); 
 app.use('/api/gogi',gogiRouter);
 app.use('/api/users',usersRouter);
-app.use('/api/authentication',authenticationRouter);
+//app.use('/api/authentication',authenticationRouter);
 // app.post('/api/test',(req,res)=>{
 //   console.log("req.body : ",req.body);
 //   console.log("gg");
