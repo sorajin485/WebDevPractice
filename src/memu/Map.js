@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 const { kakao } = window;
 class Map extends Component{
+    
     componentDidMount(){
         const container = document.getElementById('myMap');
 		const options = {

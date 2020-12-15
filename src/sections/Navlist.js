@@ -16,6 +16,7 @@ class Navlist extends Component{
                     <NavLink to="/" className="brand-logo">Logo</NavLink>
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        <li><a href="/register">회원가입</a></li>
                         <li><a href="#">내정보</a></li>
                         <li><a href="#">로그인/로그아웃</a></li>
                     </ul>
@@ -31,6 +32,7 @@ class Navlist extends Component{
                     </div>
                 </nav>
                 <ul className="sidenav" id="mobile-demo">
+                    <li><a href="/register">회원가입</a></li>
                     <li><a href="#">내정보</a></li>
                     <li><a href="#">로그인/로그아웃</a></li>
                 </ul>

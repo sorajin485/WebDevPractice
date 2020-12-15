@@ -6,8 +6,7 @@ import './index.css';
 
 
 import {Navlist,Foot} from './sections';
-
-import { Home, Intro, Gogi, Review, Map, Test } from './memu';
+import { Home, Intro, Gogi, Review, Map, Test, Register } from './memu';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +15,7 @@ ReactDOM.render(
     <Route path="/" component = {Navlist}/>
     <Route exact path="/" component = {Home}/>
     <Route path="/Test" component = {Test}/>
+    <Route path="/Register" component = {Register}/>
     <Route path="/intro" component = {Intro}/>
     <Route path="/Review" component = {Review}/>
     <Route path="/Map" component = {Map}/>
