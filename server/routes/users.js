@@ -4,7 +4,7 @@ var router = express.Router();
 var users = require('../controllers/UsersController.js');
 
 router.post('/signup', users.signup);
-//router.post('/signup', users.signin);
+router.post('/signin', users.signin);
 
 
 router.get('/', users.list);

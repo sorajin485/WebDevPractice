@@ -7,7 +7,7 @@ upload
 node_modules
 /.pnp
 .pnp.js
-database
+
 # testing
 /coverage
 

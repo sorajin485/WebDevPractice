@@ -8,6 +8,8 @@ router.post('/logout', (req, res) => {
     return res.json({ sucess: true });
 });
 
+
+
 router.post('/signin',authenticationController.signin);
 
 router.post('/signup',authenticationController.signup);
