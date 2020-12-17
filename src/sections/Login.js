@@ -1,18 +1,29 @@
 
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import {TextInput} from 'react-materialize';
-
-
+import { TextInput } from 'react-materialize';
+import { Redirect } from 'react-router-dom';
+import { SignStatus } from '../recoil/SignStatus'
+import { useRecoilState } from 'recoil';
 const Login = () =>{
+  const [ signStatus,setSignStatus ] = useRecoilState(SignStatus);
   const [ userID, setUserID ]  = useState('');
   const [ userPW, setUserPW ]  = useState('');
-    
   const handleFormSubmit = (e) => {
     e.preventDefault()
     loginTry()
         .then((response) =>{
-            console.log(response.data);
+          console.log("res : ",response.data);
+            if(response.data.result==="OK"){
+              console.log("res : ",response.data);
+              setSignStatus({
+                status : true,
+                name : response.data.userName
+              });
+              
+            }
+        }).catch((err) =>{
+          console.log("Login error",err);
         })
   }
   const onChangeUserID = (e) =>{
@@ -33,6 +44,7 @@ const Login = () =>{
 
   return(
     <div className="container">
+      { signStatus ? <Redirect to="/"/> : console.log("signStatus :",signStatus) }
       <div className="account-form-wrapper">
       <h3>Login</h3>
       <form onSubmit={handleFormSubmit}>

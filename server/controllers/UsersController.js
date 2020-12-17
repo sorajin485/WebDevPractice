@@ -8,12 +8,15 @@ usersController.signup = (req,res) => {
     users.save( (err) => {
         if (err) {
             console.log(err);
-            res.send("fail");
+            res.send("FAIL");
             //res.render("../views/userss/create");
         } else {
-            console.log("Successfully create an users");
-            res.send("good");
-            //res.redirect(`/userss/show/${users._id}`);
+            let session = req.session;
+            session.loginInfo = {
+                _id: data.admin_id,
+                username: data.name
+            };
+            return res.send("OK");
         }
     });
 }
@@ -23,9 +26,16 @@ usersController.signin = (req,res) => {
     Users.findOne({ userID: req.body.userID }).exec((err, users) =>{
         if(err){
             console.log("sign in error");
+            res.send("FAIL");
         }
         else {
             console.log("sign in users : ",users);
+            let session = req.session;
+            session.loginInfo = {
+                _id: users._id,
+                userName: users.userName
+            };
+            res.send({result : "OK", name: users.userName});
         }
     })
    

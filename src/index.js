@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
-
+import { RecoilRoot } from "recoil";
 
 import {Navlist,Foot, Register, Login} from './sections';
 import { Home, Intro, Gogi, Review, Map, Test } from './memu';
@@ -11,6 +11,7 @@ import { Home, Intro, Gogi, Review, Map, Test } from './memu';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  <RecoilRoot>
   <Router>
     <Route path="/" component = {Navlist}/>
     <Route exact path="/" component = {Home}/>
@@ -22,7 +23,7 @@ ReactDOM.render(
     <Route path="/Map" component = {Map}/>
     <Route path="/gogi" component = {Gogi}/>
     <Route path ="/" component = {Foot}/>
-  </Router>, 
+  </Router></RecoilRoot>, 
   document.getElementById('root')
 );
 

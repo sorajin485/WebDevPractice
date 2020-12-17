@@ -15,8 +15,9 @@ var path = require('path');
 
 
 const multer = require('multer');
-const upload = multer({dest: './upload'})
-
+const upload = multer({dest: './upload'});
+const session = require('express-session');
+const FileStore = require('session-file-store')(session); // 1
 
 const app = express();
 const port = process.env.PORT || 4500;
@@ -24,7 +25,15 @@ const port = process.env.PORT || 4500;
 // Body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(session({
+  secret: 'sjp@RM$1$',
+  cookie: {
+      maxAge: 1000*10000
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new FileStore()
+}));
 // Node.js의 native Promise 사용
 mongoose.Promise = global.Promise;
 
