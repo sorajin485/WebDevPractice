@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start2": "nodemon index.js",
-    "mongo": "mongod --dbpath ./database && node index.js"
+    "mongo": "mongod --dbpath ./database"
   },
   "author": "",
   "license": "ISC",
