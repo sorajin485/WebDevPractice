@@ -6,6 +6,7 @@ import { NavLink} from 'react-router-dom';
 import { SignStatus } from '../recoil/SignStatus'
 import { useRecoilState } from 'recoil';
 import axios from 'axios';
+
 function Navlist () {
     const [ signStatus,setSignStatus ] = useRecoilState(SignStatus);
 
@@ -14,14 +15,12 @@ function Navlist () {
         M.Sidenav.init(sidenav, {});
         getInfo()
         .then((response) =>{
-            if(response.data[0]){
+            if(response.data && !signStatus.status){
                 setSignStatus({
                     status : true,
-                    name : response.data[0].userName
+                    name : response.data.userName
                 });
             }
-            console.log("res : ",response.data[0]);
-            console.log("getInfo signStatus :", signStatus);
         }).catch((err) =>{
           console.log("getInfo error",err);
         })
@@ -31,6 +30,29 @@ function Navlist () {
         return axios.get(url)
     };
 
+    const logout = () =>{
+        const url = '/api/users/logout';
+        return axios.post(url,{}).then((res) => {
+            console.log("logout response : ", res.data);
+        }).catch((err) => {
+            console.log("logout err : ", err);
+        });
+    }
+
+    const loginButton = (
+        <li>
+            <NavLink to="/login">
+                <i className="material-icons">vpn_key</i>
+            </NavLink>
+        </li>
+    );
+    const logoutButton = (
+        <li>
+            <a onClick={logout}>
+                <i className="material-icons">lock_open</i>
+            </a>
+        </li>
+    );
     return (
         <div>
             <nav className="nav-extended">
@@ -38,9 +60,8 @@ function Navlist () {
                 <NavLink to="/" className="brand-logo">Logo</NavLink>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><NavLink to="/register">회원가입</NavLink></li>
-                    <li><NavLink to="/#">내정보</NavLink></li>
-                    <li><NavLink to="/login">로그인/로그아웃</NavLink></li>
+                    { signStatus.status ? "" : <li><NavLink to="/register">회원가입</NavLink></li>}
+                    { signStatus.status ? logoutButton : loginButton}
                 </ul>
                 </div>
                 <div className="nav-content container">
@@ -54,9 +75,7 @@ function Navlist () {
                 </div>
             </nav>
             <ul className="sidenav" id="mobile-demo">
-                <li><NavLink to="/register">회원가입</NavLink></li>
-                <li><NavLink to="/#">내정보</NavLink></li>
-                <li><NavLink to="/login">로그인/로그아웃</NavLink></li>
+                { signStatus.status ? logoutButton : loginButton}
             </ul>
         </div>
     );

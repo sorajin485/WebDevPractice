@@ -5,6 +5,8 @@ import pig1 from '../img/pig1.jpg';
 import pig2 from '../img/pig2.jpg';
 
 function Gogi() {
+  
+
   return (
     <div>
       <Slider
@@ -18,7 +20,7 @@ function Gogi() {
       >
         <Slide image={<img alt="" src="http://lorempixel.com/780/580/nature/1" />}>
           <Caption placement="center">
-            <h3>매장을 방문해보세요!</h3> 
+            <h3>매장을 방문해보세요!</h3>
             <h5 className="light grey-text text-lighten-3">
               신선한 고기가 있습니다.</h5>
           </Caption>
@@ -45,10 +47,7 @@ function Gogi() {
           </Caption>
         </Slide>
       </Slider>
-      <Tabs
-        className="tab-demo z-depth-1 tabs-fixed-width"
-
-      >
+      <Tabs className="tab-demo z-depth-1 tabs-fixed-width">
         <Tab
           className="red lighten-4"
           options={{
@@ -111,12 +110,11 @@ function Gogi() {
                 <div className="col s12 m4">
                   <Card
                     closeIcon={<Icon>close</Icon>}
-                    header={<CardTitle image={pig2} reveal waves="light" />}
+                    header={<CardTitle image={'/image/9cbd4078ba7b4bc2b6b7e9b3157874a3'} reveal waves="light" />}
                     reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}
                     revealIcon={<Icon>more_vert</Icon>}
                     title="돼지 수육용"
-                  >
-                  </Card>
+                  ></Card>
                 </div>
 
                 <div className="col s12 m4">

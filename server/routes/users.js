@@ -10,6 +10,7 @@ router.get('/getInfo', (req, res) => {
             code: 1
         });
     }
+    console.log("req.session.loginInfo : ",req.session.loginInfo);
     res.send( req.session.loginInfo);
 });
 router.post('/logout', (req, res) => {
