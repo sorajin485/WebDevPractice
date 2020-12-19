@@ -18,7 +18,8 @@ function Navlist () {
             if(response.data && !signStatus.status){
                 setSignStatus({
                     status : true,
-                    name : response.data.userName
+                    name : response.data.userName,
+                    phone : response.data.userPhone
                 });
             }
         }).catch((err) =>{
@@ -34,6 +35,7 @@ function Navlist () {
         const url = '/api/users/logout';
         return axios.post(url,{}).then((res) => {
             console.log("logout response : ", res.data);
+            setSignStatus({status : false})
         }).catch((err) => {
             console.log("logout err : ", err);
         });
@@ -57,7 +59,7 @@ function Navlist () {
         <div>
             <nav className="nav-extended">
                 <div className="nav-wrapper container">
-                <NavLink to="/" className="brand-logo">Logo</NavLink>
+                <NavLink to="/" className="brand-logo">주안축산!</NavLink>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     { signStatus.status ? "" : <li><NavLink to="/register">회원가입</NavLink></li>}
@@ -67,7 +69,7 @@ function Navlist () {
                 <div className="nav-content container">
                 <ul className="tabs tabs-transparent">
                     <li className="tab"><NavLink to="/intro">매장소개</NavLink></li>
-                    <li className="tab"><NavLink to="/test">test</NavLink></li>
+                    {/* <li className="tab"><NavLink to="/test">test</NavLink></li> */}
                     <li className="tab"><NavLink to="/gogi">고기구경</NavLink></li>
                     <li className="tab"><NavLink to="/review">매장리뷰</NavLink></li>
                     <li className="tab"><NavLink to="/map">오시는길</NavLink></li>

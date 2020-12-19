@@ -16,7 +16,7 @@ class App extends Component {
       {/* NAV */}
       <nav className="nav-extended">
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo">Logo</a>
+          <a href="/" className="brand-logo">주안</a>
           <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>

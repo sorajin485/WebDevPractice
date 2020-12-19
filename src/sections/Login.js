@@ -18,7 +18,8 @@ const Login = () =>{
               console.log("res : ",response.data);
               setSignStatus({
                 status : true,
-                name : response.data.userName
+                name : response.data.userName,
+                phone : response.data.phoneNum
               });
               
             }
@@ -44,7 +45,7 @@ const Login = () =>{
 
   return(
     <div className="container">
-      { signStatus ? <Redirect to="/"/> : console.log("signStatus :",signStatus) }
+      { signStatus.status ? <Redirect to="/"/> : console.log("signStatus :",signStatus) }
       <div className="account-form-wrapper">
       <h3>Login</h3>
       <form onSubmit={handleFormSubmit}>

@@ -11,11 +11,6 @@ usersController.signup = (req,res) => {
             res.send("FAIL");
             //res.render("../views/userss/create");
         } else {
-            let session = req.session;
-            session.loginInfo = {
-                _id: data.admin_id,
-                username: data.name
-            };
             return res.send("OK");
         }
     });
@@ -31,11 +26,15 @@ usersController.signin = (req,res) => {
         else {
             console.log("sign in users : ",users);
             let session = req.session;
-            session.loginInfo = {
-                _id: users._id,
-                userName: users.userName
-            };
-            res.send({result : "OK", name: users.userName});
+                session.loginInfo = {
+                    _id: users._id,
+                    userName: users.userName,
+                    userPhone: users.phoneNum
+                };
+            res.send({
+            result : "OK",
+            name: users.userName,
+            phone: users.phoneNum});
         }
     })
    

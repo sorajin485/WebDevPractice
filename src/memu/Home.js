@@ -10,7 +10,7 @@ function Home (){
     return (
         <div>
             <Parallax
-                image={<img alt="" src="http://materializecss.com/images/parallax1.jpg"/>}
+                image={<img alt="" src="/image/img/banner/banner_3.jpg"/>}
                 options={{
                 responsiveThreshold: 0
                 }}>
