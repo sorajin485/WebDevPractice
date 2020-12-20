@@ -7,7 +7,7 @@ import { SignStatus } from '../recoil/SignStatus'
 import { useRecoilState } from 'recoil';
 function Review() {
     const [signStatus, setSignStatus] = useRecoilState(SignStatus);
-    const [reviewStatus, setReviewStatus] = useState(false);
+    const [reviewStatus, setReviewStatus] = useState({status: false});
     const [review,setReview] = useState('');
     const [userText, setUserText] = useState('');
 
@@ -16,11 +16,13 @@ function Review() {
         console.log("sign state : ", signStatus);
         getReview()
             .then((response) => {
-                if (response.data && !reviewStatus) {
+                if (response.data && !review.status) {
                     console.log("res.data :", response.data);
                     gR = response.data;
-                    setReview({data : response.data});
-                    setReviewStatus(true);
+                    console.log("gR : ",gR);
+                    setReview({status : true, data : response.data});
+                    console.log("Review : ",review.data);
+                    //setReviewStatus(true);
                 }
             }).catch((err) => {
                 console.log("getInfo error", err);
@@ -31,13 +33,10 @@ function Review() {
 
         addReview()
             .then((response) => {
-                console.log("res : ", response.data);
-                if (response.data.result === "OK") {
-                    console.log("res : ", response.data);
-                    setSignStatus({
-                        status: true,
-                        name: response.data.userName
-                    });
+                console.log("res1 : ", response.data);
+                if (response.data === "OK") {
+                    console.log("res2 : ", response.data);
+                    setUserText('');    
                 }
             }).catch((err) => {
                 console.log("Login error", err);
@@ -64,25 +63,77 @@ function Review() {
     };
 
     const getContent = () => {
-        console.log("gerwrewreqerwwerrwe");
-        const datas = gR.data;
-        const body = gR.data.map( d =>{
-            <div>
-                <td>Alvin</td>
-                <td>Eclair</td>
-            </div>
-        });
-        return (
+        //console.log("gerwrewreqerwwerrwe");
+        //const names = ['눈사람', '얼음', '눈', '바람'];
+        const datas = review.data;
+        const body = datas.map( d =>
             <tr>
-                {body}
+                <td>{d.name}</td>
+                <td>{d.text}</td>
             </tr>
+        );
+        return (
+            <tbody>
+                {body}
+            </tbody>
         )
     }
-
+   
+    const getContent_login_from = () => {
+        const body = 
+                <div>
+                    <h5>짧게 리뷰 남겨주세요</h5>
+                    <TextInput
+                    data-length={75}
+                    id="TextInput-4"
+                    label="Input text"
+                    name="userID" value={userText} onChange={onChangeText}
+                    />
+                </div>
+            ;
+        return (
+            <form onSubmit={handleFormSubmit}>
+                    <h1>매장리뷰</h1>
+                    {body}
+                <Button
+                    node="button"
+                    type="submit"
+                    waves="light"
+                >Submit<Icon right>send</Icon></Button>
+            </form>
+        );
+    }
+    const getContent_logout_from = () => {
+        const datas = ['ds','aa'];
+        const body = 
+                <div>
+                    <h5>리뷰를 남기려면 로그인해야합니다.</h5>
+                </div>
+            ;
+        return (
+            <form onSubmit={handleFormSubmit}>
+                    <h1>매장리뷰</h1>
+                    {body}
+                <TextInput
+                    data-length={75}
+                    id="TextInput-4"
+                    label="Input text"
+                    name="userID" value={userText} onChange={onChangeText}
+                    disabled
+                />
+                <Button
+                    node="button"
+                    type="submit"
+                    waves="light"
+                >Submit<Icon right>send</Icon></Button>
+            </form>
+        );
+    }
     return (
         <div>
             <div className="container">
-                <form onSubmit={handleFormSubmit}>
+                {signStatus.status ? getContent_login_from() : getContent_logout_from()}
+                {/* <form onSubmit={handleFormSubmit}>
                     <h1>매장리뷰</h1>
                     <h5>짧게 리뷰를 남겨주세요</h5>
                     <TextInput
@@ -96,7 +147,8 @@ function Review() {
                         type="submit"
                         waves="light"
                     >Submit<Icon right>send</Icon></Button>
-                </form>
+                </form> */}
+              
                 <Table>
                     <thead>
                         <tr>
@@ -104,16 +156,7 @@ function Review() {
                             <th data-field="text">text</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Alan</td>
-                            <td>Jellybean</td>
-                        </tr>
-                        <tr>
-                            <td>Jonathan</td>
-                            <td>Lollipop</td>
-                        </tr>
-                    </tbody>
+                        {review.status ? getContent() : ''}
                 </Table>
             </div>
         </div>

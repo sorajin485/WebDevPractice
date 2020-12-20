@@ -8,7 +8,7 @@ reviewController.list = function (req, res) {
             console.log(`Error: ${err}`);
         } else {
             console.log('review: ',review);
-            res.send({data : review});
+            res.send(review);
         }
     });
 };
@@ -56,7 +56,7 @@ reviewController.save = function (req, res) {
         } else {
 
             console.log("Successfully create an review");
-            res.send("good");
+            res.send("OK");
             //res.redirect(`/review/show/${review._id}`);
 
         }
