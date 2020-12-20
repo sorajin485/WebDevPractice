@@ -1,6 +1,7 @@
 
 import React, { Component, useState } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import {TextInput} from 'react-materialize';
 
 const Register = () =>{
@@ -8,11 +9,15 @@ const Register = () =>{
   const [ userPW, setUserPW ]  = useState('');
   const [ userName, setUserName ]  = useState('');
   const [ phoneNum, setPhoneNum ]  = useState('');
-    
+  const [ signup, setSignup] = useState(false);
   const handleFormSubmit = (e) => {
     e.preventDefault()
     addUser()
         .then((response) =>{
+            if(response.data ==="OK"){
+              setSignup(true);
+            }
+            
             console.log(response.data);
         })
     // this.setState({
@@ -70,6 +75,7 @@ const Register = () =>{
 
   return(
     <div className="container">
+      { signup ? <Redirect to="/"/> : console.log("signStatus :",signup) }
       <div className="account-form-wrapper">
       <h3>Join</h3>
       <form onSubmit={handleFormSubmit}>

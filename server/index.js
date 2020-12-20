@@ -20,7 +20,7 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session); // 1
 
 const app = express();
-const port = process.env.PORT || 4500;
+const port = process.env.PORT || 3003;
 
 // Body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +36,8 @@ app.use(session({
 }));
 
 // Node.js의 native Promise 사용
+
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true, useUnifiedTopology: true})
@@ -43,22 +45,26 @@ mongoose.connect('mongodb://localhost/local', { useNewUrlParser: true, useUnifie
   .catch(e => console.error(e));
 
 app.use('/image',express.static('./upload'));
-
 app.post('/api/test',upload.single('image'), (req,res)=>{
   console.log("req.file.filename : ",req.file.filename);
   let image = '/image/'+req.file.filename;
   
   console.log("image : ",image);
   console.log("req.body : ",req.body);
-
 })
 
+app.use('/',express.static("./build"));
+app.use('/login',express.static("./build"));
+app.use('/register',express.static("./build"));
+app.use('/review',express.static("./build"));
+app.use('/intro',express.static("./build"));
+app.use('/gogi',express.static("./build"));
+app.use('/map',express.static("./build"));
 
 app.use('/api/cow',cowRouter);
 app.use('/api/pig',pigRouter);
 app.use('/api/chicken',chickenRouter);
 app.use('/api/review',reviewRouter);
-
 app.use('/api/users',usersRouter);
 
 //app.use('/api/authentication',authenticationRouter);

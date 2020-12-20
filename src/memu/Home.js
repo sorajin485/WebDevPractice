@@ -34,27 +34,27 @@ function Home (){
                         <div className="col s12 m4">
                         <div className="icon-block">
                             <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
-                            <h5 className="center">Speeds up development</h5>
+                            <h5 className="center">열린 공간에서</h5>
 
-                            <p className="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                            <p className="light flow-text">100% 1등급이상의 건강하고 신선한 고기를 경매로 받아와 작업을 진행합니다</p>
                         </div>
                         </div>
 
                         <div className="col s12 m4">
                         <div className="icon-block">
                             <h2 className="center brown-text"><i className="material-icons">group</i></h2>
-                            <h5 className="center">User Experience Focused</h5>
+                            <h5 className="center">주안 축산은</h5>
 
-                            <p className="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                            <p className="light flow-text">조금 더 좋은 환겨에서 자란 건강한 고기, 품질 좋은 고기를 경매로 받아와 직접 도축 합니다.</p>
                         </div>
                         </div>
 
                         <div className="col s12 m4">
                         <div className="icon-block">
                             <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
-                            <h5 className="center">Easy to work with</h5>
+                            <h5 className="center">친절 합니다.</h5>
 
-                            <p className="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                            <p className="light flow-text">모르는건 물어봐야합니다. 궁금한게 있다면 물어보세요.<br/> 김치찌개를 끓일때는 어떤고기가 필요한가요? 는 단순한 질문이아닙니다. 어느것이든 물어보세요</p>
                         </div>
                         </div>
                     </div>

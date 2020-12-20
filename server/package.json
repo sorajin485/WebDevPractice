@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start2": "nodemon index.js",
-    "mongo": "mongod --dbpath ./database"
+    "mongo": "mongod --dbpath ./database",
+    "build": "pkg . --targets node12-win-x64"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,15 @@
     "mongoose": "^5.11.7",
     "multer": "^1.4.2",
     "nodemon": "^2.0.6",
+    "pkg": "^4.4.9",
     "session-file-store": "^1.5.0"
+  },
+  "bin": "./index.js",
+  "pkg": {
+    "assets": [
+      "controllers/",
+      "models/",
+      "routes/"
+    ]
   }
 }

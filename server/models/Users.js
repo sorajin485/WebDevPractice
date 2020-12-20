@@ -5,7 +5,7 @@ var UsersSchema = new mongoose.Schema({
     userID: String,
     userPW: String,
     userName: String,
-    phoneNum: Number,
+    phoneNum: String,
     updated_at : {type: Date, default: Date.now},
 });
 
