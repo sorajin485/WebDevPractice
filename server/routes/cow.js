@@ -4,8 +4,6 @@ var express = require('express');
 var router = express.Router();
 
 var cow = require('../controllers/CowController.js');
-
-
 router.get('/', cow.list);
 router.post('/', cow.save);
 

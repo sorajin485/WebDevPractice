@@ -29,7 +29,7 @@ function Review() {
             })
     });
     const handleFormSubmit = (e) => {
-        e.preventDefault()
+        //e.preventDefault()
 
         addReview()
             .then((response) => {

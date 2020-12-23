@@ -12,11 +12,21 @@ cowController.list = function (req, res) {
         }
     });
 };
+cowController.save = function (req, res) {
+    var cow = new Cow(req.body);
+    cow.save(function (err) {
+        if (err) {
+            console.log(err);
+            res.send("fail");
+            //res.render("../views/cow/create");
+        } else {
+            console.log("Successfully create an cow");
+            res.send("good");
+        }
+    });
+};
 
 
-
-
-// id 로 단일 직원 표시
 
 cowController.show = function (req, res) {
     Cow.findOne({ img: image/img/chicken/chicken_1.jpg }).exec(function (err, cow) {
@@ -44,32 +54,7 @@ cowController.create = function (req, res) {
 
 // 직원 저장
 
-cowController.save = function (req, res) {
 
-    var cow = new Cow(req.body);
-
-
-
-
-    cow.save(function (err) {
-
-        if (err) {
-
-            console.log(err);
-            res.send("fail");
-            //res.render("../views/cow/create");
-
-        } else {
-
-            console.log("Successfully create an cow");
-            res.send("good");
-            //res.redirect(`/cow/show/${cow._id}`);
-
-        }
-
-    });
-
-};
 
 
 

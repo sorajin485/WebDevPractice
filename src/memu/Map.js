@@ -2,12 +2,12 @@
 import React, { useEffect } from 'react';
 const { kakao } = window;
 
-
+//37.46741738597061, 126.6796137748884
 function Map () {
     useEffect(()=>{
         const container = document.getElementById('myMap');
 		const options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			center: new kakao.maps.LatLng(37.467417, 126.679613),
 			level: 3
 		};
         const map = new kakao.maps.Map(container, options);
@@ -31,7 +31,7 @@ function Map () {
                         버스
                     </div>
                     <div className="col s5 ">
-                        버스 몇번 몇번
+                        28-1, 28
                     </div>
                 </div>
                 <div className="row">
@@ -47,7 +47,7 @@ function Map () {
                         차
                     </div>
                     <div className="col s5 ">
-                        고속도로 정도
+                        공단시장을 끼고있습니다. 많이 복잡합니다. 멀리 주차하시고 찾아와 주세요
                     </div>
                 </div>
             </div>
